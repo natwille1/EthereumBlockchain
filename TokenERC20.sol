@@ -23,7 +23,7 @@ contract TokenERC20 {
     // Public variables of the token
     string public name;
     string public symbol;
-    uint8 public decimals = 18;
+    uint8 public decimals = 2;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;
 
@@ -229,8 +229,8 @@ contract MyAdvancedToken is owned, TokenERC20 {
     }
 
     /// @notice Buy tokens from contract by sending ether
-    function buy() payable public {
-        uint amount = msg.value / buyPrice;               // calculates the amount
+    function buy(uint256 _amount) payable public {
+        uint amount = _amount/ buyPrice;               // calculates the amount
         _transfer(this, msg.sender, amount);              // makes the transfers
     }
 
