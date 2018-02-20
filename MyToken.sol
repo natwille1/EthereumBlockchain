@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 contract MyToken {
     /* This creates an array with all balances */
     mapping (address => uint256) public balanceOf;
-    uint256 TOKENVALUE = 10;
+    uint256 TOKENVALUE = 10 * 10E18;
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function MyToken(uint256 initialSupply) {
@@ -16,10 +16,10 @@ contract MyToken {
         require(balanceOf[_to] + _value >= balanceOf[_to]); // Check for overflows
         balanceOf[msg.sender] -= _value;                    // Subtract from the sender
         balanceOf[_to] += _value;                           // Add the same to the recipient
-        msg.sender.transfer(TOKENVALUE * _value);
+        //msg.sender.transfer(TOKENVALUE * _value);
     }
 
-    function getBalanceOf(address me) public returns (uint256) {
-        return balanceOf[me];
+    function getBalanceOf(address _account) public view returns (uint256) {
+        return balanceOf[_account];
     }
 }
