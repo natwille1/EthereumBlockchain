@@ -22,6 +22,10 @@ body {
     margin-bottom: 10px;
     text-align: center;
 }  
+h5 { 
+    font-size:30px;
+    text-align: center;
+}
   .container-fluid {
       padding: 60px 50px;
   }
@@ -231,7 +235,8 @@ span.psw {
 }
 .card-h-100{
   background-color: white;
-  width:50%;
+  width: 300px;
+  height: 300px;
   border:2px solid black;
   border-radius: 10px;
   padding:25px;
@@ -312,6 +317,19 @@ li.dropdown .dropbtn {
     box-sizing: border-box;
 }
 
+.account_information{
+  position:relative;
+  left: 200px;
+
+}
+#login-form {
+  margin-top: 30px;
+}
+
+#login-submit {
+  margin-bottom: 30px;
+}
+
 #myInput {
   background-image: url('/css/searchicon.png');
   background-position: 10px 10px;
@@ -390,6 +408,7 @@ li.dropdown .dropbtn {
     }
     .container {
     width: 400px;
+
   }
   }
   @media screen and (max-width: 300px) {

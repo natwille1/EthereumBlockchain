@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>JavaScript API</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+  
+<script type="text/javascript">
+///First web3.eth.watch code to monitor coinbase
+  
+web3.eth.watch('chain').changed(function(){
+  var coinbase = web3.eth.coinbase;
+  document.getElementById('coinbase').innerText = coinbase;
+  var balance = web3.eth.balanceAt(coinbase);
+  document.getElementById('balance').innerText = balance;
+});
+
+var balance = web3.eth.balanceAt(coinbase);
+  document.getElementById('balance').innerText = web3.toDecimal(balance);
+
+///Insert your contract address var here:
+ 
+
+///Second web3.eth.watch code to monitor block number
+  web3.eth.watch('pending').changed(function(){
+  var blockNumber = web3.eth.number;
+  document.getElementById('latestBlock').innerText = blockNumber;
+  var hash = web3.eth.block(blockNumber).hash;
+  document.getElementById('latestBlockHash').innerText = hash;
+  var timeStamp = web3.eth.block(blockNumber).timestamp;
+  document.getElementById('latestBlockTimestamp').innerText = Date(timeStamp);
+});
+
+  contract Me {
+  string32 first;
+  string32 last;
+  string32 twitter;
+  string32 nick;
+  address myAddress;
+  uint dateJoined;
+  function Me(){
+    first = 'Ken';
+    last = 'Kappler';
+    twitter = '@kapplerken';
+    nick ='BlueChain';
+    myAddress = msg.sender;
+    dateJoined = block.timestamp;
+  }   
+}
+
+</script>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <h3>JavaScript API</h3>
+  </div>
+
+  <div class="jumbotron">
+    <h5>Coinbase Address: <strong id="coinbase"></strong></h5>
+    <h5>Balance: <strong id="balance"></strong></h5>
+    <h5>Latest Block Number: <strong id="latestBlock"></strong></h5>
+    <h5>Latest Block Timestamp: <strong id="latestBlockTimestamp"></strong></h5>
+    <h5>Latest Block Hash: <strong id="latestBlockHash"></strong></h5>
+    <h5>Contract String: <strong id="contractString"></strong></h5>
+    <h5>Favourite Python: <strong id="favouritePython"></strong></h5>
+    <br>
+  </div>
+
+</body>
+
+</html>

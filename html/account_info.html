@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/token_invest.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../js/token_invest.js"></script>
+  <script src="config.js"></script>
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Ether ConnEx</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#contact">CONTACT</a></li>
+        <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;" >ITO</button>
+        
+
+
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">Account
+          <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="#">Token Exchange</a>
+            <a href="token_transaction.html">Wallet</a>
+            <a href="account_info.html">Account Info</a>
+            <a href="token_main.html">Log Out</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class= "account">
+  <h1  style = "font-size: 32px;"> Account Info </h1>
+
+  <div class = "account_information">
+    <h2  style = "font-size: 20px;"> First Name: </h2>
+    <h2  style = "font-size: 20px;"> Last Name: </h2>
+    <h2  style = "font-size: 20px;"> Email Address: </h2>
+    <h2  style = "font-size: 20px;"> Phone Number: </h2>
+    <h2  style = "font-size: 20px;"> Street Address: </h2>
+    <h2  style = "font-size: 20px;"> Balance: </h2>
+</div>
+</div>
+
+</body>
+</html>
