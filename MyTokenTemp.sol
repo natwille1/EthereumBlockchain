@@ -2,7 +2,7 @@ contract MyTokenTemp {
     /* This creates an array with all balances */
     mapping (address => uint256) public balanceOf;
     
-    address[] public divAddress = new address[](10);           // store addresses of token purchasers
+    address[] public divAddress = new address[](10);           // store addresses of token holders
     
     uint256 public tokenValue;
     uint256 public beneficiary;
@@ -12,7 +12,9 @@ contract MyTokenTemp {
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         tokenValue = value;                                 // set value of token
         beneficiary = msg.sender;                       // store address of contract instantiator 
+        divAddress[0] = msg.sender;
         totalSupply = intialSupply;
+
     }
 
     /* Send coins */
