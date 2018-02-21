@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/token_invest.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../js/token_invest.js"></script>
+  <script src="config.js"></script>
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Ether ConnEx</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#contact">CONTACT</a></li>
+        <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;" >ITO</button>
+        
+
+
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">Account
+          <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="#">Token Exchange</a>
+            <a href="token_transaction.html">Wallet</a>
+            <a href="#">Account Info</a>
+            <a href="token_main.html">Log Out</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Marketing Icons Section -->
+<div class="container-fluid bg-1">
+      <div class="row">
+        <h2 class = "card-header" style ="text-align: center; font-size: 32px;"> Companies </h2>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h2 class="card-header">Pizza</h2>
+            <h4 class="card-header">Price: 22 ETH per Token</h4>
+            <div class="card-body">
+              <p class="card-text">Pizza is quite popular with poor uni students.</p>
+            </div>
+            <div class="card-footer">
+              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" >Buy</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h2 class="card-header">Burger</h2>
+            <h4 class="card-header">Price: 8 ETH per Token</h4>
+            <div class="card-body">
+              <p class="card-text">This rich meal will make you believe in love.</p>
+            </div>
+            <div class="card-footer">
+               <button onclick="document.getElementById('id04').style.display='block'" style="width:auto;" >Buy</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h2 class="card-header">Beer</h2>
+            <h4 class="card-header">Price: 53 ETH per Token</h4>
+            <div class="card-body">
+              <p class="card-text">Enough said.</p>
+            </div>
+            <div class="card-footer">
+              <div class="card-footer">
+               <button onclick="document.getElementById('id05').style.display='block'" style="width:auto;" >Buy</button>
+            </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- /.row -->
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <h2>Transaction Successfull!</h2><br>
+    </div>
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="window.location='token_buy.html';" >OK</button>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="uname"><b>Buying Token</b></label>
+      <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
+    </div>
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block'" >BUY</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div id="id03" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="Tname"><b>Name of Token</b></label>
+      <input type="text" placeholder="Enter the name of the token you want to offer" name="Tname" required>
+      <label for="Tamount"><b>Number of Tokens Offered</b></label>
+      <input type="text" placeholder="Enter the number of tokens you want to offer" name="Tamount" required>
+      <label for="Tvalue"><b>Price of Token (ETH)</b></label>
+      <input type="text" placeholder="Enter the price per Token in Ethers" name="Tvalue" required>
+      <label>
+      </label> 
+    </div>
+
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="window.location='token_buy.html';" >OFFER</button>
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div id="id04" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="uname"><b>Buying Token</b></label>
+      <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
+      <label>
+      </label> 
+    </div>
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="document.getElementById('id04').style.display='none';document.getElementById('id01').style.display='block'" >BUY</button>
+      <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div id="id05" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="uname"><b>Buying Token</b></label>
+      <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
+      <label>
+      </label> 
+    </div>
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="document.getElementById('id05').style.display='none';document.getElementById('id01').style.display='block'">BUY</button>
+      <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+<!-- Container (Contact)-->
+<div id="contact" class="container-fluid bg-2">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Contact Details</h2><br>
+      <h4><strong>blabla:</strong>blablabla</h4><br>
+      <p><strong>blabla:</strong> blablabla</p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
