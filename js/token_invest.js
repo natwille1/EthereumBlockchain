@@ -1,3 +1,39 @@
+//Back end stuff------------
+var Web3 = require('web3');
+var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+abi = JSON.parse('[{"constant": true, "inputs": [], "name": "tokenPrice", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "balanceOf", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "_account", "type": "address"} ], "name": "getWei", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "_account", "type": "address"} ], "name": "getBalanceOf", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getBene", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"inputs": [{"name": "initialSupply", "type": "uint256"}, {"name": "value", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "constructor"}, {"anonymous": false, "inputs": [{"indexed": true, "name": "from", "type": "address"}, {"indexed": true, "name": "to", "type": "address"}, {"indexed": false, "name": "value", "type": "uint256"} ], "name": "Transfer", "type": "event"}, {"constant": false, "inputs": [], "name": "transferWei", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "amount", "type": "uint256"} ], "name": "sell", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "_numTokens", "type": "uint256"} ], "name": "buy", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}]'); 
+contract = web3.eth.contract(abi);
+
+var contractAddress = '0xeec918d74c746167564401103096d45bbd494b74';
+//var contractAddress2 = '0xfb88de099e13c3ed21f80a7a1e49f8caecf10df6';
+
+contractInstance = contract.at(contractAddress);
+//contractInstance2 = contract.at(contractAddress2);
+
+console.log(contractInstance);
+
+function displayLogin() {
+  console.log(document.getElementById("walletAddress"));
+}
+
+function buyToken() {
+  var amount = document.getElementById("tokenamount").value;
+  console.log("amount" + amount);
+  var totalPrice = amount * contractInstance.tokenPrice();
+  //contractInstance.buy(amount, {from:web3.eth.accounts[1], gas: 4700000, value: web3.toWei(5, "ether")});
+  contractInstance.buy(amount, {from:document.getElementById("walletAddress").value, gas: 4700000, value: web3.toWei(totalPrice, "ether")});
+  var bal = contractInstance.getWei(web3.eth.accounts[1]);
+  console.log(bal)
+  console.log("yes");
+} 
+
+//function buyToken2() {
+//  var amount = document.getElementById("tokenamount2").value;
+//  var totalPrice = amount * contractInstance2.tokenPrice();
+//  contractInstance2.buy(amount, {from:web3.eth.accounts[1], gas: 4700000, value: web3.toWei(totalPrice, "ether")});
+//} 
+//Back end stuff
+
 // Get the modal
 var modal = document.getElementById('id01');
 
