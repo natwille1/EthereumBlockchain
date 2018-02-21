@@ -13,7 +13,7 @@ body {
   h4 {
       font-size: 19px;
       line-height: 1.375em;
-      color: #303030;
+      color: #3399ff;
       font-weight: 400;
       margin-bottom: 30px;
   }
@@ -33,14 +33,14 @@ h5 {
       background-color: #cdf;
   }
   .bg-2 {
-      background-color: #fcfeaa;
+      background-color: #0c1e63
   }
   .logo-small {
-      color: #3399ff;
+      color: #84e4f9;
       font-size: 50px;
   }
   .logo {
-      color: #3399ff;
+      color: #84e4f9;
       font-size: 400px;
   }
   .thumbnail {
@@ -88,7 +88,7 @@ h5 {
   }
   .panel-heading {
       color: #fff !important;
-      background-color: #3399ff !important;
+      background-color: #84e4f9 !important;
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
@@ -103,7 +103,7 @@ h5 {
       font-size: 32px;
   }
   .panel-footer h4 {
-      color: #aaa;
+      color: #fff;
       font-size: 14px;
   }
   .panel-footer .btn {
@@ -114,7 +114,7 @@ h5 {
   .navbar {
      
       margin-bottom: 0;
-      background-color: #f3f61b;
+      background-color: #280782;
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -124,9 +124,9 @@ h5 {
       font-family: Montserrat, sans-serif;
   }
   .navbar li a {
-      color: #3399ff !important;
+      color: #84e4f9 !important;
         margin-bottom: 0;
-  background-color: #f3f61b;
+  background-color: #280782;
   z-index: 9999;
   border: 0;
   font-size: 12px !important;
@@ -137,7 +137,7 @@ h5 {
   text-decoration: none;
   }
   .navbar-brand {
-      color: #3399ff !important;
+      color: #84e4f9 !important;
       font-size: 20px;
       font-weight: 900;
   }
@@ -176,8 +176,8 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #f3f61b;
-    color: #3399ff;
+    background-color: #280782;
+    color: #84e4f9;
     border: 0;
     font-size: 12px !important;
     letter-spacing: 4px;
@@ -199,7 +199,7 @@ button:hover {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background-color: white;
     font-size: 12px
 }
 
@@ -281,7 +281,7 @@ li.dropdown .dropbtn {
     outline: none;
     color: #3399ff
     padding: 10px 10px;
-    background-color: #f3f61b;
+    background-color: #280782;
     font-family: Montserrat, sans-serif;
     margin: 0;
     display:inline-block;
@@ -289,7 +289,7 @@ li.dropdown .dropbtn {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f3f61b;
+    background-color: #280782;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
