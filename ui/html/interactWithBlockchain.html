@@ -1,0 +1,88 @@
+<!doctype>
+<html>
+
+<head>
+    <script type="text/javascript" src="/node_modules/web3/dist/web3.min.js"></script>
+    <script type="text/javascript" src="/node_modules/bignumber.js/bignumber.min.js"></script>
+    <script type="text/javascript" src="node_modules/truffle-contract/dist/truffle-contract.min.js"></script>
+    <script type="text/javascript">
+    //The address of the SimpleStorage contract. **Change according to the contract address you deployed**
+    var contractAddress = "0x345ca3e014aaf5dca488057592ee47305d9b3e10"
+    //Reads a text file. Used to read the contract specification JSON file
+    function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                callback(rawFile.responseText);
+            }
+        }
+        rawFile.send(null);
+    }
+    //set status in contract
+    function setStatus() {
+        // Get current status from contract, and set it as old status in the Web page
+        getStatus('old_status','Old status was: ')
+        
+        // Get new status from Web page, and set it in the contract
+        var new_status = document.getElementById('new_status').value;
+        
+        contractobject.at(contractAddress).then(function(instance) {
+            instance.setStatus(new_status, { from: web3.eth.coinbase }).
+            then(function(result) { 
+                console.log(result)
+                getStatus('current_status','Current status now is: ')
+                getCurrentCredit(web3)
+             }).catch(function(e) {
+                console.log(e)
+            })
+        })
+    }
+    //Get status in contract
+    function getStatus(tag,text) {
+        contractobject.at(contractAddress).then(function(instance) {
+            instance.getStatus().then(function(result) { 
+                console.log(result); 
+                document.getElementById(tag).innerText = text + result;
+            })
+        });
+    }
+    //Get current credit on default account
+    function getCurrentCredit(web3) {
+        account0=web3.eth.accounts[0]
+        currentCredit=web3.eth.getBalance(account0)
+        document.getElementById('current_credit').innerText = 'Current credit on ' +account0 + ' is ' +currentCredit+ " wei.";
+    }
+    //Create a new Web3 object to interact with the blockchain
+    var web3 = new Web3()
+    //Set endpoint at localhost:8545 (Ganache)
+    var provider = new Web3.providers.HttpProvider("http://localhost:8545")
+    web3.setProvider(provider)
+    var contract_spec
+    var contractobject
+    //This load the contract specifications (from the Truffle compiled contract in /build/contracts/SimpleStorage.json)
+    readTextFile("/build/contracts/SimpleStorage.json", function(text) {
+        contract_spec = JSON.parse(text)
+        contractobject = TruffleContract(contract_spec)
+        contractobject.setProvider(provider)
+        getCurrentCredit(web3)
+        getStatus('current_status','Current status is : ')
+    });
+    </script>
+</head>
+
+<body>
+    <h1>interactWithBlockchain: Simple storage application</h1>
+    <div id="current_credit"></div>
+    <div id="old_status"></div>
+    <div>
+        <input type="text" id="new_status">
+    </div>
+    <div id='setNewStatus'>
+        <button type="button" onClick="setStatus();">Change status</button>
+    </div>
+    <div id="current_status"></div>
+</body>
+
+</html>
