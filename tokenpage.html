@@ -30,14 +30,19 @@
       font-weight: 400;
       margin-bottom: 30px;
   }  
-  .jumbotron {
+  .h1, h1 {
+    margin-top: 75px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+  /*.jumbotron {
       position: relative;
-      min-height: 700px;
-      background-image: url('background_image.jpg');
+      min-height: 50%;
+      background-image: url('background_image2.jpg');
       color: #000;
       padding: 100px 25px;
       font-family: Montserrat, sans-serif;
-  }
+  }*/
   .container-fluid {
       padding: 60px 50px;
   }
@@ -232,6 +237,19 @@ span.psw {
     width: 85%; /* Could be more or less, depending on screen size */
 }
 
+.card-h-100{
+  background-color: white;
+  width:50%;
+  border:2px solid black;
+  border-radius: 10px;
+  padding:25px;
+  margin: 75px;
+}
+.card_header{
+  margin-left: auto;
+  margin-right: auto;
+
+}
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -335,21 +353,63 @@ span.psw {
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="file:///Users/jonas.greiner/Desktop/Accenture%20Bootcamp/bootcampSydney18/listings.html">REGISTER</a></li>
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" >LOG IN</button>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" >ACCOUNT</button>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="jumbotron text-center">
+<!-- <div class="jumbotron text-center">
   <h1>Don't Connect</h1> 
   <p>Token Exchange</p> 
   <form>
     <div class="input-group">
     </div>
   </form>
-</div>
+</div> -->
+
+<!-- Marketing Icons Section -->
+      <div class="row">
+        <h1 class = "card-header"> Companies </h1>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h4 class="card-header">Pizza</h4>
+            <div class="card-body">
+              <p class="card-text">Pizza is quite popular with poor uni students.</p>
+            </div>
+            <div class="card-footer">
+              <button onclick="document.getElementById('id04').style.display='block'" style="width:auto;" >Buy</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h4 class="card-header">Burger</h4>
+            <div class="card-body">
+              <p class="card-text">This rich meal will make you believe in love.</p>
+            </div>
+            <div class="card-footer">
+               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" >Buy</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h4 class="card-header">Beer</h4>
+            <div class="card-body">
+              <p class="card-text">Enough said.</p>
+            </div>
+            <div class="card-footer">
+              <div class="card-footer">
+               <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;" >Buy</button>
+            </div>
+             </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+
 
 <div id="id01" class="modal">
   
@@ -373,6 +433,84 @@ span.psw {
     </div>
   </form>
 </div>
+    <div class="container" style="background-color:#fefefe">
+       </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="uname"><b>Number of Tokens</b></label>
+      <input type="text" placeholder="Enter the number of tokens you wish to buy" name="uname" required>
+        
+      </label> 
+      <button href="file:///Users/jonas.greiner/Desktop/Accenture%20Bootcamp/bootcampSydney18/listings.html">Buy</button>
+    </div>
+
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"><!-- Forgot <a href="#????">password? --></a></span>
+    </div>
+  </form>
+</div>
+
+    <div class="container" style="background-color:#fefefe">
+       </div>
+  </form>
+</div>
+
+<div id="id03" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="uname"><b>Number of Tokens</b></label>
+      <input type="text" placeholder="Enter the number of tokens you wish to buy" name="uname" required>
+        
+      </label> 
+      <button href="file:///Users/jonas.greiner/Desktop/Accenture%20Bootcamp/bootcampSydney18/listings.html">Buy</button>
+    </div>
+
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"></a></span>
+    </div>
+  </form>
+</div>
+
+    <div class="container" style="background-color:#fefefe">
+       </div>
+  </form>
+</div>
+
+<div id="id04" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="uname"><b>Number of Tokens</b></label>
+      <input type="text" placeholder="Enter the number of tokens you wish to buy" name="uname" required>
+        
+      </label> 
+      <button href="file:///Users/jonas.greiner/Desktop/Accenture%20Bootcamp/bootcampSydney18/listings.html">Buy</button>
+    </div>
+
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"></a></span>
+    </div>
+  </form>
+</div>
+
+    <div class="container" style="background-color:#fefefe">
+       </div>
+  </form>
+</div>
+
+
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid bg-2">
@@ -404,7 +542,7 @@ span.psw {
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
+ var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
