@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="../js/token_invest.js"></script>
   <script src="config.js"></script>
-
+  
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -40,9 +40,9 @@
           <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content" id="myDropdown">
-            <a href="token_sel.html">ICO</a>
+            <a href="token_sell.html">ICO</a>
             <a href="token_transaction.html">Order History</a>
-            <a href="account_info.html">Account Info</a>
+            <a href="#">Account Info</a>
             <a href="token_main.html">Log Out</a>
           </div>
         </div>
@@ -55,85 +55,74 @@
 
 <!-- Marketing Icons Section -->
 <div class="container-fluid bg-1">
-        <h2>Transaction</h2>
-
-    <input type="text" id="myInput" onkeyup="myFunction2()" placeholder="Search for TransactionID.." title="Type in a TransactionID">
-
-    <table id="myTable">
-        <tr class="header">
-            <th style="width:25%;">TransactionID</th>
-            <th style="width:25%;">Date</th>
-            <th style="width:25%;">Description</th>
-            <th style="width:25%;">Amount (Tokens)</th>
-        </tr>
-        <tr>
-            <td>3926528315</td>
-            <td>11/02/2018</td>
-            <td>Sell 5.736272 @ ETH 38.2345324 Trade Settle</td>
-            <td> 244</td>
-        </tr>
-        <tr>
-            <td>2849372840</td>
-            <td>10/02/2018</td>
-            <td>Buy 73.6272 @ ETH 38.2345324 Trading Fee</td>
-            <td> 14</td>
-        </tr>
-        <tr>
-            <td>384638272</td>
-            <td>8/02/2018</td>
-            <td>Buy 2.72 @ ETH 53.24 Trade Fee</td>
-            <td> 28</td>
-        </tr>
-        <tr>
-            <td>84933638374</td>
-            <td>5/02/2018</td>
-            <td>Buy 5.736272 @ ETH 5.736272AUD Fully Matched</td>
-            <td> 104</td>
-        </tr>
-        <tr>
-            <td>3749842911</td>
-            <td>03/01/2018</td>
-            <td>Sell 627.2 @ ETH 24.295 Trade Settle</td>
-            <td> 5134</td>
-        </tr>
-        <tr>
-            <td>1159478215</td>
-            <td>11/11/2017</td>
-            <td>Sell 5.736272 @ ETH 38.2345324 Trade Settle</td>
-            <td> 54</td>
-        </tr>
-        <tr>
-            <td>9002638263</td>
-            <td>05/02/2017</td>
-            <td>Sell 62.72 @ ETH 3.24 Trade Settle</td>
-            <td> 25</td>
-        </tr>
-        <tr>
-            <td>0194728262</td>
-            <td>6/02/2016</td>
-            <td>Buy 2.324 @ ETH 53.24 Trading Fee</td>
-            <td> 24</td>
-        </tr>
-    </table>  
-    
-</div>
+      <div class="row">
+        <h2 class = "card-header" style ="text-align: center; font-size: 32px;"> Companies </h2>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h2 class="card-header">Pizza</h2>
+            <h4 class="card-header">Price: 22 ETH per Token</h4>
+            <div class="card-body">
+              <p class="card-text">Pizza is quite popular with poor uni students.</p>
+            </div>
+            <div class="card-footer">
+              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" >Sell</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h2 class="card-header">Burger</h2>
+            <h4 class="card-header">Price: 8 ETH per Token</h4>
+            <div class="card-body">
+              <p class="card-text">This rich meal will make you believe in love.</p>
+            </div>
+            <div class="card-footer">
+               <button onclick="document.getElementById('id04').style.display='block'" style="width:auto;" >Sell</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card-h-100">
+            <h2 class="card-header">Beer</h2>
+            <h4 class="card-header">Price: 53 ETH per Token</h4>
+            <div class="card-body">
+              <p class="card-text">Enough said.</p>
+            </div>
+            <div class="card-footer">
+              <div class="card-footer">
+               <button onclick="document.getElementById('id05').style.display='block'" style="width:auto;" >Sell</button>
+            </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <!-- /.row -->
 
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
 
+    <div class="container">
+      <h2>Transaction Successfull!</h2><br>
+    </div>
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="window.location='token_Sell.html';" >OK</button>
+    </div>
+  </form>
+</div>
 
 <div id="id02" class="modal">
   
   <form class="modal-content animate" action="/action_page.php">
 
     <div class="container">
-      <label for="uname"><b>Buying Token</b></label>
-      <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
-      <label>
-      </label> 
+      <label for="uname"><b>Selling Token</b></label>
+      <input type="text" placeholder="Enter the number of tokens you want to Sell" name="uname" required>
     </div>
     <div class="container" style="background-color:#fefefe">
-      <button type="button" onclick="window.location='token_buy.html';" >BUY</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block'" >Sell</button>
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
@@ -155,7 +144,7 @@
     </div>
 
     <div class="container" style="background-color:#fefefe">
-      <button type="button" onclick="window.location='token_buy.html';" >OFFER</button>
+      <button type="button" onclick="window.location='token_Sell.html';" >OFFER</button>
       <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
@@ -166,13 +155,13 @@
   <form class="modal-content animate" action="/action_page.php">
 
     <div class="container">
-      <label for="uname"><b>Buying Token</b></label>
-      <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
+      <label for="uname"><b>Selling Token</b></label>
+      <input type="text" placeholder="Enter the number of tokens you want to Sell" name="uname" required>
       <label>
       </label> 
     </div>
     <div class="container" style="background-color:#fefefe">
-      <button type="button" onclick="window.location='token_buy.html';" >BUY</button>
+      <button type="button" onclick="document.getElementById('id04').style.display='none';document.getElementById('id01').style.display='block'" >Sell</button>
       <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
@@ -183,19 +172,17 @@
   <form class="modal-content animate" action="/action_page.php">
 
     <div class="container">
-      <label for="uname"><b>Buying Token</b></label>
-      <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
+      <label for="uname"><b>Selling Token</b></label>
+      <input type="text" placeholder="Enter the number of tokens you want to Sell" name="uname" required>
       <label>
       </label> 
     </div>
     <div class="container" style="background-color:#fefefe">
-      <button type="button" onclick="window.location='token_buy.html';" >BUY</button>
+      <button type="button" onclick="document.getElementById('id05').style.display='none';document.getElementById('id01').style.display='block'">Sell</button>
       <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
 </div>
-
-
 <!-- Container (Contact)-->
 <div id="contact" class="container-fluid bg-2">
   <div class="row">
@@ -206,6 +193,7 @@
     </div>
   </div>
 </div>
+
 
 </body>
 </html>
