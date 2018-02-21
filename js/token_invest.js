@@ -13,17 +13,34 @@ contractInstance = contract.at(contractAddress);
 console.log(contractInstance);
 
 function displayLogin() {
-  console.log(document.getElementById("walletAddress"));
+  var addr = document.getElementById("walletAddress").value;
+  console.log(addr);
+}
+
+function saveAddress() {
+    var addr = document.getElementById("walletAddress").value;
+    document.cookie = 'walletAddress:'+addr; //Set the cookie
+}
+
+function getAddress() {
+    var start = document.cookie.indexOf('walletAddress:'); //Get the location of the cookie value
+    var stop = document.cookie.indexOf(';'); //Get the end of the cookie value
+
+    return document.cookie.substring(start+14, stop); //Return the value of the cookie (+5 because 'snum:' is 5 chars long)
+
 }
 
 function buyToken() {
   var amount = document.getElementById("tokenamount").value;
   console.log("amount" + amount);
+  //var address = getAddress();
+  //console.log(address);
+  var addr = document.getElementById("walletAddress").value;
   var totalPrice = amount * contractInstance.tokenPrice();
   //contractInstance.buy(amount, {from:web3.eth.accounts[1], gas: 4700000, value: web3.toWei(5, "ether")});
-  contractInstance.buy(amount, {from:document.getElementById("walletAddress").value, gas: 4700000, value: web3.toWei(totalPrice, "ether")});
-  var bal = contractInstance.getWei(web3.eth.accounts[1]);
-  console.log(bal)
+  contractInstance.buy(amount, {from:addr, gas: 4700000, value: web3.toWei(totalPrice, "ether")});
+  //var bal = contractInstance.getWei(web3.eth.accounts[1]);
+  //console.log(bal)
   console.log("yes");
 } 
 
