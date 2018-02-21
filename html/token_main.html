@@ -13,8 +13,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../node_modules/web3/dist/web3.min.js"></script>
   <script src="../js/token_invest.js"></script>
-  <script src="config.js"></script>
   
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -55,7 +55,7 @@
 
     <div class="container" id="login-form">
       <label for="uname"><b>Wallet Address</b></label>
-      <input type="text" placeholder="Enter Address" name="uname" required>
+      <input type="text" placeholder="Enter Address" name="uname" id="walletAddress" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
@@ -64,7 +64,7 @@
       </label>
     </div>
     <div class="container" id="login-submit" style="background-color:#fefefe">
-    	<button type="button" onclick="window.location='token_buy.html';" >LOG IN</button>
+    	<button type="button" onclick="window.location='token_buy.html'" >LOG IN</button>
       	<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       	<span class="psw">Forgot <a href="#????">password?</a></span>
     </div>

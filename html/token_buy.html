@@ -11,8 +11,10 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../node_modules/web3/dist/web3.min.js"></script>
   <script src="../js/token_invest.js"></script>
-  <script src="config.js"></script>
+ 
+
   
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -65,7 +67,7 @@
               <p class="card-text">Pizza is quite popular with poor uni students.</p>
             </div>
             <div class="card-footer">
-              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" >Buy</button>
+              <button onclick="document.getElementById('id02').style.display='block';displayLogin()" style="width:auto;" >Buy</button>
             </div>
           </div>
         </div>
@@ -119,10 +121,10 @@
 
     <div class="container">
       <label for="uname"><b>Buying Token</b></label>
-      <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
+      <input type="text" placeholder="Enter the number of tokens you want to buy" id="tokenamount" name="uname" required>
     </div>
     <div class="container" style="background-color:#fefefe">
-      <button type="button" onclick="document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block'" >BUY</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block';buyToken()" >BUY</button>
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
