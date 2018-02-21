@@ -18,36 +18,58 @@ contract MyToken {
     function buy(uint256 _numTokens) payable {
         uint256 tokenAmountinWei = _numTokens * tokenPrice;
 
-        require(balanceOf[beneficiary] >= _numTokens); 
-        require(balanceOf[msg.sender] + _numTokens >= balanceOf[msg.sender]);
+        require(balanceOf[beneficiary] >= _numTokens);                                  //bene got enough tokens
+        require(balanceOf[msg.sender] + _numTokens >= balanceOf[msg.sender]);           //no overflow
         //require(tokenAmountinWei == msg.value);
 
-        bool validPurchase = forwardFunds(beneficiary, msg.sender, tokenAmountinWei);
+        require(msg.sender.balance >= tokenAmountinWei);                               //msg.sender has enough wei
 
-        if(validPurchase){
-            transfer(msg.sender, beneficiary, _numTokens);
-        }
+        transfer(beneficiary, msg.sender, _numTokens);
+        beneficiary.transfer(msg.value);
     }
 
-    function forwardFunds(address _to, address _from, uint256 tokenAmountinWei) internal returns(bool){
+    function forwardFunds(uint256 tokenAmountinWei) internal returns(bool){
        require(beneficiary.balance >= tokenAmountinWei);
        require(msg.sender.balance + tokenAmountinWei >= msg.sender.balance);
-
-
-       beneficiary.transfer(tokenAmountinWei);
 
 
        return true;
     }
 
-    function transfer(address _to, address _from, uint256 _value) {
-        require(balanceOf[msg.sender] >= _value);           // Check if the sender has enough
+    function transfer(address _from, address _to, uint256 _value) {
+        require(balanceOf[_from] >= _value);           // Check if the sender has enough
         require(balanceOf[_to] + _value >= balanceOf[_to]); // Check for overflows
-        balanceOf[msg.sender] -= _value;                    // Subtract from the sender
+        balanceOf[_from] -= _value;                    // Subtract from the sender
         balanceOf[_to] += _value;                           // Add the same to the recipient
     }
 
     function getBalanceOf(address _account) public view returns (uint256) {
         return balanceOf[_account];
     }
+
+    function getBene() public view returns (address) {      //returns address of bene should be the same as business id
+        return beneficiary;
+    }
+
+    function getWei(address _account) public view returns (uint256) {
+        return _account.balance;
+    }
+
+    function transferWei() payable {
+       beneficiary.transfer(msg.value);
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
