@@ -32,24 +32,37 @@
 
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="token_contact.html">CONTACT</a></li><button onclick="document.getElementById('id03').style.display='block'" style="width:auto;" >ITO</button>
+          <li><a href="token_contact.html">CONTACT</a></li>
+         <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;" >ITO</button>
+         
+
 
           <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()">Menu
+            <button class="dropbtn" onclick="myFunction()">Account
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="myDropdown">
               <a href="token_main.html">Home</a>
               <a href="token_buy.html">Token Exchange</a>
               <a href="token_transaction.html">Order History</a>
-               </div>
+              
+            </div>
           </div>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div id="id03" class="modal">
+<div class="jumbotron text-center">
+  <h1>Ether ConnEx</h1>
+  <p>Token Exchange</p>
+  <form>
+    <div class="input-group">
+    </div>
+  </form>
+</div>
+
+ <div id="id03" class="modal">
 
   <form class="modal-content animate" action="/action_page.php">
 
@@ -67,15 +80,6 @@
     <div class="container" style="background-color:#fefefe">
       <button type="button" onclick="window.location='token_buy.html';" >OFFER</button>
       <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
-  </form>
-</div>
-
-<div class="jumbotron text-center">
-  <h1>Ether ConnEx</h1>
-  <p>Token Exchange</p>
-  <form>
-    <div class="input-group">
     </div>
   </form>
 </div>
@@ -106,10 +110,9 @@
 <div id="about" class="container-fluid bg-2">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About Ether ConnEx</h2><br>
+      <h2>Connect with Ether ConnEx</h2><br>
       <h4>Ether ConnEx is an exchange for tokens.</h4><br>
-      <p>Our Ether ConnEx is a blockchain technology company based in Accenture, Sydney. Our team was funded by delicious food offered by Accenture. We are super excited for you to join us in this journey.
-We offer a reliable and secure trading platform that is mainly used by food and beverage companies.  We deploy an unbelievable experience that will wow your mind by its functionality.</p>
+      <p>Here at Ether ConnEx cannot offer job positions. Once we achieve world domination, we will start to hire more students. In the mean time, you can buy tokens from this beautiful website. </p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-signal logo"></span>
@@ -126,6 +129,7 @@ We offer a reliable and secure trading platform that is mainly used by food and 
     </div>
   </div>
 </div>
+
 
 
 </body>

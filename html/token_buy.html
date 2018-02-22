@@ -32,20 +32,19 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#contact">CONTACT</a></li>
-        <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;" >ICO</button>
+        <li><a href="token_contact.html">CONTACT</a></li>
+        <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;" >ITO</button>
 
 
 
         <div class="dropdown">
-          <button class="dropbtn" onclick="myFunction()">Account
+          <button class="dropbtn" onclick="myFunction()">Menu
           <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content" id="myDropdown">
-            <a href="#">Token Exchange</a>
-            <a href="token_transaction.html">Wallet</a>
-            <a href="#">Account Info</a>
-            <a href="token_main.html">Log Out</a>
+            <a href="token_main.html">Home</a>
+            <a href="token_buy.html">Token Exchange</a>
+            <a href="token_transaction.html">Order History</a>
           </div>
         </div>
       </ul>
@@ -69,7 +68,10 @@
                 <a  href="../files/prospectus_whitehawk.pdf" class="btn btn-primary prospectus">Prospectus</a>
               </li>
               <li class="list-group-item">
-                <a href="#" class="btn btn-primary buy-btn">Buy</a>
+                <!-- <a href="#" class="btn btn-primary buy-btn">Buy</a> -->
+                <div>
+              <a type ="button" class="btn btn-primary buy-btn" onclick="document.getElementById('id02').style.display='block'" >Buy</a>
+            </div>
               </li>
             </ul>
           </div>
@@ -86,7 +88,9 @@
                 <a  href="../files/prospectus_readcloud.pdf" class="btn btn-primary prospectus">Prospectus</a>
               </li>
               <li class="list-group-item">
-                <a href="#" class="btn btn-primary buy-btn">Buy</a>
+                <div>
+                   <a type ="button" class="btn btn-primary buy-btn" onclick="document.getElementById('id04').style.display='block'" >Buy</a>
+                </div>
               </li>
             </ul>
           </div>
@@ -102,8 +106,10 @@
               <li class="list-group-item">
                 <a  href="../files/prospectus_accelerate-resources.pdf" class="btn btn-primary prospectus">Prospectus</a>
               </li>
-              <li>
-                <a  href="#" class="btn btn-primary buy-btn">Buy</a>
+              <li class="list-group-item">
+                <div>
+                  <a type ="button" class="btn btn-primary buy-btn" onclick="document.getElementById('id05').style.display='block'" >Buy</a>
+                </div>
               </li>
             </ul>
           </div>
@@ -130,7 +136,7 @@
 
   <form class="modal-content animate" action="/action_page.php">
 
-    <div class="container">
+    <div class="container buy-container">
       <label for="uname"><b>Buying Token</b></label>
       <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
     </div>
@@ -167,7 +173,7 @@
 
   <form class="modal-content animate" action="/action_page.php">
 
-    <div class="container">
+    <div class="container buy-container">
       <label for="uname"><b>Buying Token</b></label>
       <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
       <label>
@@ -184,14 +190,14 @@
 
   <form class="modal-content animate" action="/action_page.php">
 
-    <div class="container">
+    <div class="container buy-container">
       <label for="uname"><b>Buying Token</b></label>
       <input type="text" placeholder="Enter the number of tokens you want to buy" name="uname" required>
       <label>
       </label>
     </div>
     <div class="container" style="background-color:#fefefe">
-      <button type="button" onclick="document.getElementById('id05').style.display='none';document.getElementById('id01').style.display='block'">BUY</button>
+      <button type="button" onclick="document.getElementById('id05').style.display='none';document.getElementById('id01').style.display='block'" >BUY</button>
       <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
